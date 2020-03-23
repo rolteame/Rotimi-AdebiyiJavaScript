@@ -17,16 +17,46 @@ let data = [
     }
 ];
 
-function intrestCalculator(data){
-    if(Principal >= 2500 && (time > 1 && time < 3)){
-        rate = 3;
-    }else if (Principal >= 2500 && time >= 3){
-        rate = 4;
-    }else if(Principal < 2500 || time <= 1){
-        rate = 2;
-    }else {
-        rate = 1;
-    }
+let interestData = [];
 
-    interest = Principal * rate * time / 100;
+function interestCalculator(data){
+    for(let i = 0; i < data.length; i++){
+        if(data.Principal >= 2500 && (data.time > 1 && data.time < 3)){
+            let obj = {}
+            rate = 3
+            let interest = (data[i].Principal * rate * data[i].time)/100
+            obj.Principal = data[i].Principal
+            obj.rate = rate
+            obj.time = data[i].time
+            obj.interest = interest
+        }else if (data.Principal >= 2500 && data.time >= 3){
+            let obj = {}
+            rate = 4
+            let interest = (data[i].Principal * rate * data[i].time)/100
+            obj.Principal = data[i].Principal
+            obj.rate = rate
+            obj.time = data[i].time
+            obj.interest = interest
+        }else if(data.Principal < 2500 || data.time <= 1){
+            let obj = {}
+            rate = 2
+            let interest = (data[i].Principal * rate * data[i].time)/100
+            obj.Principal = data[i].Principal
+            obj.rate = rate
+            obj.time = data[i].time
+            obj.interest = interest
+        }else {
+            let obj = {}
+            rate = 1
+            let interest = (data[i].Principal * rate * data[i].time)/100
+            obj.Principal = data[i].Principal
+            obj.rate = rate
+            obj.time = data[i].time
+            obj.interest = interest
+        }
+        interestData.push(obj);
+    }
+    console.log(interestData);
+    return;
 }
+interestCalculator(data);
