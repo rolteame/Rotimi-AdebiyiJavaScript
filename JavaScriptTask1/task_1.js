@@ -1,0 +1,12 @@
+let name = "Rotimi Adebiyi";
+
+let courses = ["HTML", "CSS", "JavaScript", "UI/UX"];
+
+console.log(name);
+console.log(courses);
+
+for (let i = 0; i <= 200; i++){
+if ((i % 2) === 0){
+    console.log(i,",");
+}
+}
