@@ -21,8 +21,9 @@ let interestData = [];
 
 function interestCalculator(data){
     for(let i = 0; i < data.length; i++){
+        let obj = "";
         if(data.Principal >= 2500 && (data.time > 1 && data.time < 3)){
-            let obj = {}
+            obj = {}
             rate = 3
             let interest = (data[i].Principal * rate * data[i].time)/100
             obj.Principal = data[i].Principal
@@ -30,7 +31,7 @@ function interestCalculator(data){
             obj.time = data[i].time
             obj.interest = interest
         }else if (data.Principal >= 2500 && data.time >= 3){
-            let obj = {}
+            obj = {}
             rate = 4
             let interest = (data[i].Principal * rate * data[i].time)/100
             obj.Principal = data[i].Principal
@@ -38,7 +39,7 @@ function interestCalculator(data){
             obj.time = data[i].time
             obj.interest = interest
         }else if(data.Principal < 2500 || data.time <= 1){
-            let obj = {}
+            obj = {}
             rate = 2
             let interest = (data[i].Principal * rate * data[i].time)/100
             obj.Principal = data[i].Principal
@@ -46,7 +47,7 @@ function interestCalculator(data){
             obj.time = data[i].time
             obj.interest = interest
         }else {
-            let obj = {}
+            obj = {}
             rate = 1
             let interest = (data[i].Principal * rate * data[i].time)/100
             obj.Principal = data[i].Principal
